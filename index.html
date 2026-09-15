@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BhubanGo · Bhubaneswar Tourism & Stays</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-xs">
+        <div class="max-w-xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-extrabold text-xl flex items-center justify-center shadow-md shadow-emerald-200">
+                    B
+                </div>
+                <div>
+                    <h1 class="font-bold text-base leading-tight text-slate-900">BhubanGo</h1>
+                    <p class="text-[11px] text-slate-500 font-medium">Bhubaneswar, Odisha</p>
+                </div>
+            </div>
+            <button onclick="document.getElementById('step3').scrollIntoView({behavior: 'smooth'})" class="text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3.5 py-2 rounded-full transition-colors active:scale-95">
+                Find Stays
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+        
+        <!-- Hero Section -->
+        <section class="text-center space-y-2 pt-2">
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                Pick your <span class="text-emerald-600 underline decoration-emerald-300 underline-offset-4">place.</span><br>
+                Plan the trip.
+            </h1>
+            <p class="text-slate-600 text-sm max-w-xs mx-auto">
+                Tour Bhubaneswar, then book a hotel, hostel or PG near your college.
+            </p>
+        </section>
+
+        <!-- Progress Steps -->
+        <div class="flex items-center justify-between gap-2 bg-white p-3 rounded-2xl border border-slate-200/80 shadow-xs">
+            <div id="badge-step-1" class="flex items-center gap-1.5 text-xs font-bold text-emerald-700">
+                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px]">1</span>
+                Spots
+            </div>
+            <div class="h-0.5 flex-1 bg-slate-100"></div>
+            <div id="badge-step-2" class="flex items-center gap-1.5 text-xs font-medium text-slate-400">
+                <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-[10px]">2</span>
+                Stay
+            </div>
+            <div class="h-0.5 flex-1 bg-slate-100"></div>
+            <div id="badge-step-3" class="flex items-center gap-1.5 text-xs font-medium text-slate-400">
+                <span class="w-5 h-5 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-[10px]">3</span>
+                Book
+            </div>
+        </div>
+
+        <!-- Flow Cards -->
+        <div class="space-y-4">
+            
+            <!-- Step 1: Spots -->
+            <div class="border border-slate-200 rounded-2xl p-4 bg-white shadow-xs">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                        <span class="text-emerald-600 font-extrabold">1 ·</span> Choose your spots
+                    </h2>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2 py-0.5 rounded-full">Bhubaneswar</span>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="toggleSpot(this)" class="spot-btn p-3 border rounded-xl border-emerald-500 bg-emerald-50/60 text-left transition-all active:scale-95">
+                        <p class="font-bold text-xs text-slate-900">Lingaraj Temple</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Heritage site</p>
+                    </button>
+                    <button onclick="toggleSpot(this)" class="spot-btn p-3 border rounded-xl border-slate-200 bg-white text-left transition-all active:scale-95">
+                        <p class="font-bold text-xs text-slate-900">Udayagiri Caves</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Historic caves</p>
+                    </button>
+                    <button onclick="toggleSpot(this)" class="spot-btn p-3 border rounded-xl border-slate-200 bg-white text-left transition-all active:scale-95">
+                        <p class="font-bold text-xs text-slate-900">Nandankanan</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Zoo & Sanctuary</p>
+                    </button>
+                    <button onclick="toggleSpot(this)" class="spot-btn p-3 border rounded-xl border-slate-200 bg-white text-left transition-all active:scale-95">
+                        <p class="font-bold text-xs text-slate-900">Dhauli Shanti Stupa</p>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Peace pagoda</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Stay Filter -->
+            <div id="step2" class="border border-slate-200 rounded-2xl p-4 bg-white shadow-xs">
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                        <span class="text-emerald-600 font-extrabold">2 ·</span> Where will you stay
+                    </h2>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                    <button onclick="filterStays('all', this)" class="filter-btn py-2 px-1 text-center rounded-xl text-xs font-bold bg-emerald-600 text-white shadow-xs">
+                        All Options
+                    </button>
+                    <button onclick="filterStays('hotel', this)" class="filter-btn py-2 px-1 text-center rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">
+                        Hotels
+                    </button>
+                    <button onclick="filterStays('pg', this)" class="filter-btn py-2 px-1 text-center rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">
+                        PGs / Hostels
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Available Stays -->
+            <div id="step3" class="border border-slate-200 rounded-2xl p-4 bg-white shadow-xs space-y-3">
+                <div class="flex items-center justify-between">
+                    <h2 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                        <span class="text-emerald-600 font-extrabold">3 ·</span> Book your stay
+                    </h2>
+                    <span id="avail-count" class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                        2 available
+                    </span>
+                </div>
+
+                <!-- Stay 1 -->
+                <div class="stay-card stay-hotel border border-slate-200 rounded-xl overflow-hidden bg-white">
+                    <div class="h-36 bg-slate-200 relative">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-xs">Hotel</span>
+                    </div>
+                    <div class="p-3 space-y-2">
+                        <div class="flex items-start justify-between gap-1">
+                            <h3 class="font-bold text-slate-900 text-sm">Kalinga Grand Hotel</h3>
+                            <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded">★ 4.6</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500">2.4 km from Utkal University · AC · WiFi</p>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+                            <div>
+                                <span class="text-base font-extrabold text-slate-900">₹1,800</span>
+                                <span class="text-[10px] text-slate-500">/night</span>
+                            </div>
+                            <button onclick="alert('Booking request sent for Kalinga Grand Hotel!')" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition-all shadow-xs">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stay 2 -->
+                <div class="stay-card stay-pg border border-slate-200 rounded-xl overflow-hidden bg-white">
+                    <div class="h-36 bg-slate-200 relative">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=600&q=80" alt="Hostel" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-emerald-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-xs">Student PG</span>
+                    </div>
+                    <div class="p-3 space-y-2">
+                        <div class="flex items-start justify-between gap-1">
+                            <h3 class="font-bold text-slate-900 text-sm">SOA Scholars Residency</h3>
+                            <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded">★ 4.8</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500">Near Campus · Food Included · WiFi</p>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+                            <div>
+                                <span class="text-base font-extrabold text-slate-900">₹6,500</span>
+                                <span class="text-[10px] text-slate-500">/month</span>
+                            </div>
+                            <button onclick="alert('Booking request sent for SOA Scholars Residency!')" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition-all shadow-xs">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 py-4 text-center text-[11px] text-slate-400 bg-white">
+        <p>© 2026 BhubanGo · Designed for mobile browsing</p>
+    </footer>
+
+    <!-- Interactive JS -->
+    <script>
+        function toggleSpot(btn) {
+            if (btn.classList.contains('border-emerald-500')) {
+                btn.classList.remove('border-emerald-500', 'bg-emerald-50/60');
+                btn.classList.add('border-slate-200', 'bg-white');
+            } else {
+                btn.classList.add('border-emerald-500', 'bg-emerald-50/60');
+                btn.classList.remove('border-slate-200', 'bg-white');
+            }
+        }
+
+        function filterStays(type, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.className = 'filter-btn py-2 px-1 text-center rounded-xl text-xs font-semibold bg-slate-100 text-slate-600 transition-colors';
+            });
+            btn.className = 'filter-btn py-2 px-1 text-center rounded-xl text-xs font-bold bg-emerald-600 text-white shadow-xs';
+
+            const cards = document.querySelectorAll('.stay-card');
+            let count = 0;
+            cards.forEach(card => {
+                if (type === 'all' || card.classList.contains('stay-' + type)) {
+                    card.style.display = 'block';
+                    count++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('avail-count').innerText = count + ' available';
+        }
+    </script>
+</body>
+</html>
